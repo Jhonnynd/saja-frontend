@@ -21,7 +21,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useUserContext } from "../Components/UserContext";
 
 const pages = ["Categories", "Deals", "Delivery"];
-const settings = ["Profile", "Chat", "Past Orders", "Logout"];
+const settings = ["Profile", "Chat", "Upload Product", "Logout"];
 const settingsNotUser = ["Login/Signup"];
 
 function Navbar() {
@@ -31,7 +31,6 @@ function Navbar() {
   const { currUser, setCurrUser } = useUserContext();
   const navigate = useNavigate();
 
-  // to retrieve currUser from local storage and to set it for context
   useEffect(() => {
     console.log(currUser);
     if (currUser === null) {
@@ -41,10 +40,8 @@ function Navbar() {
     }
   }, [currUser]);
 
-  // checks if user is logged in or not to display user menu
   const login = currUser !== null ? true : false;
 
-  // handle user menu click
   const handleUserMenu = (page) => {
     if (page === "Logout") {
       logout({ returnTo: process.env.REACT_APP_REDIRECT_URI });
@@ -59,8 +56,8 @@ function Navbar() {
           redirect_uri: `${process.env.REACT_APP_REDIRECT_URI}`,
         },
       });
-    } else if (page === "Past Orders") {
-      navigate("pastorders");
+    } else if (page === "Upload Product") {
+      navigate("/uploadproduct");
     } else {
       navigate(`${page.toLowerCase()}`);
     }
