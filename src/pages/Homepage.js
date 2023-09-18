@@ -163,7 +163,6 @@ const Homepage = () => {
         },
       });
       setAccessToken(accessToken);
-      // }
       console.log("Access Token : ", accessToken);
       console.log("User: ", user);
       if (
@@ -246,7 +245,7 @@ const Homepage = () => {
           alignItems: "center",
           width: "100%",
           height: {
-            xl: "50vh",
+            xl: "80vh",
           },
           overflow: "hidden",
         }}
@@ -263,7 +262,6 @@ const Homepage = () => {
               lg: "5%",
             },
             bottom: "0%",
-            // transform: "translate(-50%, -50%)",
           }}
           onClick={(e) => navigate("/deals")}
         >
@@ -280,7 +278,6 @@ const Homepage = () => {
               lg: "5%",
             },
             bottom: "0%",
-            // transform: "translate(-50%, -50%)",
           }}
           onClick={(e) => navigate("/uploadproduct")}
         >
@@ -417,10 +414,17 @@ const Homepage = () => {
         sx={{
           height: "200px",
           width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
           backgroundColor: "primary.main",
           overflow: "hidden",
         }}
-      ></Box>
+      >
+        <Typography variant="h5" sx={{ color: "#fff" }}>
+          Saja. Copyright © {new Date().getFullYear()}. All Rights Reserved
+        </Typography>
+      </Box>
     </>
   );
 };

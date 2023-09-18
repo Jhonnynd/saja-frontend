@@ -2,7 +2,7 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-import AuthButtonImage from "../images/saja.png"; // Make sure to provide the correct path to your image
+import AuthButtonImage from "../images/saja.png";
 
 function Auth0() {
   const { loginWithRedirect } = useAuth0();
@@ -33,7 +33,7 @@ function Auth0() {
             src={AuthButtonImage}
             alt="Login"
             style={{
-              width: "150px", // Adjust the image size as needed
+              width: "150px",
               height: "auto",
             }}
           />
